@@ -220,13 +220,26 @@ portfolio/
   - `Footer.tsx`: Vivid yellow footer with thick 8px top border, marquee divider, social and resume links.
   - `CustomCursor.tsx`: Tactile square pixel pointer with hard shadow.
 
+### Rethink 10: GitHub Repository & GitHub Pages Hosting Setup
+- **User Request:** "upload the file and host it through github"
+- **User Selection:** Repository name `portfolio` (Deploys to `https://souvikpal19.github.io/portfolio`).
+- **Architecture & Infrastructure Decisions:**
+  - Configured Next.js static HTML/CSS/JS export in `next.config.ts` (`output: 'export'`, `images: { unoptimized: true }`).
+  - Added dynamic `basePath` configuration (`NEXT_PUBLIC_BASE_PATH`) so local development runs at `/` while GitHub Pages builds with prefix `/portfolio`.
+  - Exported and wired `RESUME_PATH` helper to guarantee `/resume.pdf` loads without 404s when hosted under the `/portfolio` subpath.
+  - Created automated GitHub Actions workflow in `.github/workflows/deploy.yml` with permissions (`pages: write`, `id-token: write`) using actions `actions/configure-pages@v5`, `actions/upload-pages-artifact@v3`, and `actions/deploy-pages@v4`.
+  - Added `public/.nojekyll` to bypass Jekyll directory filtering on `_next/` assets.
+  - Initialized Git repository on branch `main` inside `portfolio/`, committed all tracked files (51 files, clean `.gitignore`).
+  - Configured remote origin: `https://github.com/souvikpal19/portfolio.git`.
+
 ---
 
 ## Verification & Status
 
 - **Development Server:** Running smoothly at `http://localhost:3000` (Next.js 16 + Turbopack).
-- **Production Build:** `npm run build` completed successfully (`exit code 0`, 0 errors, static prerendering complete).
+- **Production Static Export:** `npm run build` completed successfully (`exit code 0`, 0 errors, static prerendering complete with `NEXT_PUBLIC_BASE_PATH=/portfolio`).
 - **HTTP Verification:** Verified 200 OK and confirmed all updated sections render with live assets, Neo-brutalism tokens, 2026 NPTEL course date, and working `/resume.pdf` download.
+- **Git & GitHub Remote:** Configured and committed on branch `main`.
 
 ---
 
