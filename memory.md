@@ -239,7 +239,8 @@ portfolio/
 - **Development Server:** Running smoothly at `http://localhost:3000` (Next.js 16 + Turbopack).
 - **Production Static Export:** `npm run build` completed successfully (`exit code 0`, 0 errors, static prerendering complete with `NEXT_PUBLIC_BASE_PATH=/portfolio`).
 - **HTTP Verification:** Verified 200 OK and confirmed all updated sections render with live assets, Neo-brutalism tokens, 2026 NPTEL course date, and working `/resume.pdf` download.
-- **Git & GitHub Remote:** Configured and committed on branch `main`.
+- **Git & GitHub Remote:** Successfully pushed branch `main` to `https://github.com/souvikpal19/portfolio.git`. Build step in GitHub Actions completed with 100% success.
+- **Final Activation:** GitHub Pages needs the "GitHub Actions" source enabled in repo settings to complete public serving.
 
 ---
 
