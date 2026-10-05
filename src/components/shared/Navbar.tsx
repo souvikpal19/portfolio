@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Menu, X, Download } from "lucide-react";
 import { useState } from "react";
 import { Github } from "@/components/shared/Icons";
+import { RESUME_PATH } from "@/lib/utils";
 
 const navLinks = [
   { label: "ABOUT", href: "#about" },
@@ -70,7 +71,7 @@ export default function Navbar() {
             {/* Resume Button */}
             <a
               id="navbar-resume-btn"
-              href="/resume.pdf"
+              href={RESUME_PATH}
               target="_blank"
               rel="noopener noreferrer"
               download="Souvik_Pal_Resume.pdf"
@@ -122,7 +123,7 @@ export default function Navbar() {
                 GITHUB
               </a>
               <a
-                href="/resume.pdf"
+                href={RESUME_PATH}
                 target="_blank"
                 rel="noopener noreferrer"
                 download="Souvik_Pal_Resume.pdf"

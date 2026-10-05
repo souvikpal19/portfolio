@@ -2,6 +2,7 @@
 
 import { ArrowUpRight, Download, Heart } from "lucide-react";
 import { Github, Linkedin } from "@/components/shared/Icons";
+import { RESUME_PATH } from "@/lib/utils";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -66,7 +67,7 @@ export default function Footer() {
 
               <a
                 id="footer-resume"
-                href="/resume.pdf"
+                href={RESUME_PATH}
                 target="_blank"
                 rel="noopener noreferrer"
                 download="Souvik_Pal_Resume.pdf"

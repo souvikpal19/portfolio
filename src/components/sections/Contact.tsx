@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Mail, MapPin, Phone, Send, CheckCircle, Download, ArrowUpRight } from "lucide-react";
 import { Github, Linkedin } from "@/components/shared/Icons";
+import { RESUME_PATH } from "@/lib/utils";
 
 const contactTiles = [
   {
@@ -44,7 +45,7 @@ const contactTiles = [
     icon: Download,
     label: "ATS RESUME PDF",
     value: "Download Souvik Pal Resume",
-    href: "/resume.pdf",
+    href: RESUME_PATH,
     download: true,
     bg: "bg-[#FFD93D]",
   },

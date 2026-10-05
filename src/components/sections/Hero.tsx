@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import { ArrowDown, ArrowUpRight, Download, Star, Sparkles, Terminal } from "lucide-react";
 import { Github } from "@/components/shared/Icons";
+import { RESUME_PATH } from "@/lib/utils";
 
 const dynamicRoles = [
   { text: "AI / ML ENGINEER", bg: "bg-[#FFD93D]", textCol: "text-black", rotate: "-rotate-1" },
@@ -181,7 +182,7 @@ export default function Hero() {
           {/* Resume Download Button */}
           <a
             id="hero-resume-download-btn"
-            href="/resume.pdf"
+            href={RESUME_PATH}
             target="_blank"
             rel="noopener noreferrer"
             download="Souvik_Pal_Resume.pdf"

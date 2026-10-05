@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { GraduationCap, Award, Sparkles, Download, ArrowUpRight } from "lucide-react";
 import { Github } from "@/components/shared/Icons";
+import { RESUME_PATH } from "@/lib/utils";
 
 export default function About() {
   return (
@@ -72,7 +73,7 @@ export default function About() {
               {/* Action Link to Resume */}
               <div className="pt-5 mt-4 border-t-2 border-black flex gap-3">
                 <a
-                  href="/resume.pdf"
+                  href={RESUME_PATH}
                   target="_blank"
                   rel="noopener noreferrer"
                   download="Souvik_Pal_Resume.pdf"
